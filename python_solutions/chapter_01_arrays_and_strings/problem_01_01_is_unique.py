@@ -34,3 +34,13 @@ def is_unique(input_string):
             return False
         hash_table[index] = True  # add unobserved character to hash table
     return True
+
+def does_char_repeat(word):
+    alist = list(word)
+    blist = sorted(alist)
+    if len(alist) == 1:
+        return None
+    for i in range(len(alist)-1):
+        if blist[i] == blist[i+1]:
+            return False
+    return True
