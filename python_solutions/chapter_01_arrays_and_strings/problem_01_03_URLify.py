@@ -53,3 +53,9 @@ def URLify(string):
             string[writer] = string[reader]  # if the reader sees a non-space, the writer copies it over
             reader -= 1  # reader and writer are advanced the same amount
             writer -= 1
+
+str1 = 'the quick brown fox jumps over the lazy sheep dog'
+def replace_spaces(str1):
+    newstr = str1.replace(' ', '%20') + '%20'
+    return newstr
+print(replace_spaces(str1))
