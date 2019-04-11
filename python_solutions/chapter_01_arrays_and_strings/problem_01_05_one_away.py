@@ -67,3 +67,24 @@ def one_away(s1, s2):
     if len_difference == 1:
         return search_insertion(s1, s2)
     return search_replacement(s1, s2)
+
+
+
+
+
+str1 = 'aabc'
+str2 = 'aaa'
+
+def one_edit_away(a, b):
+    if str1 == str2:
+        return '0 edits away'
+    if len(str1) == len(str2):
+        for i in str1:
+            if str1[i] != str2[i]:
+                count += 1
+        if count > 1:
+            return '1 or more edits away'
+    if (len(str1) == len(str2) + 1) or (len(str2) == len(str1) + 1):
+        return 'hi'
+    return '1 or more edits away'
+print(one_edit_away(str1, str1))
