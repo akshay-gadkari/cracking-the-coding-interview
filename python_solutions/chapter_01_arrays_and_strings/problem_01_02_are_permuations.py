@@ -41,3 +41,16 @@ def are_permutations(s1, s2):
         if character_counts[index] < 0:
             return False
     return True
+
+
+
+def is_permutation(str1, str2):
+    if len(str1) != len(str2):
+        return False
+    else:
+        concat1 = ''.join(sorted(str1))
+        concat2 = ''.join(sorted(str2))
+        if concat1 == concat2:
+            return True
+        else:
+            return False
