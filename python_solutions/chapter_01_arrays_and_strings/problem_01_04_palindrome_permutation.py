@@ -39,3 +39,25 @@ def palindrome_permutation(string):
         return sum(bit_vector) == 0
     return sum(bit_vector) == 1  # odd length. expect all chars except 1 to have even value i.e. False
 
+
+str1 = 'aabcbc'
+def is_palindrome_permutation(str1):
+    str1 = str1.replace(' ', '').lower()
+    if len(str1) == 1:
+        return True
+    list1 = sorted(list(str1))
+    set1 = set(str1)
+    list2 = list(set1)
+    dict1 = {}
+    for i in range(len(list2)):
+        dict1.update({list2[i]:0})
+    # sort the dictionary
+    dict2 = dict(sorted(dict1.items(), key=lambda x: x[0]))
+    for i in list1:
+        dict2[i] += 1
+    list3 = list(dict2.values())
+    list3 = list(filter(lambda x: x%2==1, list3))
+    if len(list3) > 1:
+        return False
+    return True
+print(is_palindrome_permutation(str1))
